@@ -3,7 +3,7 @@ import pandas as pd
 
 
 # 사이드 바에 극성이 뚜렷한 문장 셀렉트할 수 있게
-sent_dic = pd.read_csv("hw_do/data/의사록_문장톤_최종.csv")
+sent_dic = pd.read_csv("hw_do/data/min_sen_fin.csv")
 # 셀렉트한 문장이 챗봇에 입력되게
 # 입력된 문장이 어떤 ngram들이 나오고 극성 점수가 몇인지
 
@@ -13,7 +13,7 @@ pos_dic = pos_dic.rename(columns={'Unnamed: 0': 'H_Key'})
 neg_dic = neg_dic.rename(columns={'Unnamed: 0': 'D_Key'})
 
 
-sent_dic = pd.read_csv("hw_do/data/의사록_문장톤_최종.csv")
+sent_dic = pd.read_csv("hw_do/data/min_sen_fin.csv")
 sent = pd.read_csv("hw_do/data/sent_tone.csv")
 sent_dic['sentence'] = sent['sentence']
 
