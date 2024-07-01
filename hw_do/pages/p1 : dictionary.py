@@ -12,13 +12,13 @@ plt.rcParams['font.family'] = 'AppleGothic'
 
 st.title('극성 사전')
 
-neg_dic = pd.read_csv("/streamlit_BOK/hw_do/data/total_dov_dic.csv")
-pos_dic = pd.read_csv("/streamlit_BOK/hw_do/data/total_haw_dic.csv")
+neg_dic = pd.read_csv("/hw_do/data/total_dov_dic.csv")
+pos_dic = pd.read_csv("/hw_do/data/total_haw_dic.csv")
 pos_dic = pos_dic.rename(columns={'Unnamed: 0': 'H_Key'})
 neg_dic = neg_dic.rename(columns={'Unnamed: 0': 'D_Key'})
 
-neg_sent = pd.read_csv("/streamlit_BOK/hw_do/data/do_ngram_minsent.csv")
-pos_sent = pd.read_csv("/streamlit_BOK/hw_do/data/hw_ngram_minsent.csv")
+neg_sent = pd.read_csv("/hw_do/data/do_ngram_minsent.csv")
+pos_sent = pd.read_csv("/hw_do/data/hw_ngram_minsent.csv")
 
 #----------------------------------------------------------------------------
 
