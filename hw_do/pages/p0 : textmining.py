@@ -16,7 +16,7 @@ with st.sidebar:
 
 
 # 콜금리,문서톤 데이터 불러오기
-final_data = pd.read_csv("./streamlit_BOK/hw_do/data/doc_tone_base_rate.csv")
+final_data = pd.read_csv("/streamlit_BOK/hw_do/data/doc_tone_base_rate.csv")
 # 데이터 프레임 변환
 df = pd.DataFrame(final_data)
 df['date'] = pd.to_datetime(df['date'])
