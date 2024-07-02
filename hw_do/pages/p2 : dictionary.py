@@ -5,23 +5,11 @@ import matplotlib.font_manager as fm
 import numpy as np
 import os
 
-def unique(list):
-    x = np.array(list)
-    return np.unique(x)
-
-@st.cache
-def fontRegistered():
-    font_dirs = [os.getcwd() + '/customFonts']
-    font_files = fm.findSystemFonts(fontpaths=font_dirs)
-    for font_file in font_files:
-        fm.fontManager.addfont(font_file)
-    fm._load_fontmanager(try_read_cache=False)
-
-fontRegistered()
-fontNames = [f.name for f in fm.fontManager.ttflist]
-fontname = st.selectbox("폰트 선택", unique(fontNames))
-plt.rc('font', family=fontname)
-
+font_path = '/System/Library/Fonts/Supplemental/AppleGothic.ttf'
+# 폰트 프로퍼티를 가져옵니다.
+font_prop = fm.FontProperties(fname=font_path, size=12)
+# matplotlib의 rcParams를 통해 전역 폰트 설정을 변경
+plt.rcParams['font.family'] = 'AppleGothic'
 
 
 st.title('극성 사전')
