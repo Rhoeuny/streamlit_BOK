@@ -25,7 +25,7 @@ with st.sidebar:
 
 
 st.subheader('의사록 문장 톤분석 챗봇')
-
+st.write("")
 
 def judge_tone(sentence):
     
