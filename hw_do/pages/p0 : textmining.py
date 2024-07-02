@@ -44,14 +44,12 @@ st.write("-------------------------------------------------------------------")
 
 st.subheader('산점도 및 추세선')
 st.write('의사록 어조에 따른 기준금리 분포')
+st.caption('x축 : 어조  / y축 : 기준금리')
 
 import seaborn as sns
 # seaborn 설치 필요!
 graph1 = plt.figure()
 sns.regplot(x = "doc_tone", y = "baserate", data = date_df)
-plt.xlabel("어조")
-plt.ylabel("기준금리")
-plt.title("의사록 어조에 따른 기준금리 분포")
 st.pyplot(graph1)
 
 
