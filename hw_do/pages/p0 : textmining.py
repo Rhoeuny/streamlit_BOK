@@ -52,7 +52,7 @@ graph1 = plt.figure()
 sns.regplot(x = "doc_tone", y = "baserate", data = date_df)
 st.pyplot(graph1)
 
-st.caption('x축 : 어조  / y축 : 기준금리')
+# st.caption('x축 : 어조  / y축 : 기준금리')
 
 
 # 선택 날짜 네이버 뉴스 검색
