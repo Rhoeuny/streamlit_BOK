@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
-import requests
-from bs4 import BeautifulSoup
+import requests as req
+from bs4 import BeautifulSoup as bs
 import matplotlib.font_manager as fm
 
 st.title('📈논문 구현 : 금리 예측')
@@ -44,7 +44,7 @@ st.write("-------------------------------------------------------------------")
 
 st.subheader('산점도 및 추세선')
 st.write('의사록 어조에 따른 기준금리 분포')
-st.caption('x축 : 어조  / y축 : 기준금리')
+
 
 import seaborn as sns
 # seaborn 설치 필요!
@@ -52,6 +52,7 @@ graph1 = plt.figure()
 sns.regplot(x = "doc_tone", y = "baserate", data = date_df)
 st.pyplot(graph1)
 
+st.caption('x축 : 어조  / y축 : 기준금리')
 
 
 # 선택 날짜 네이버 뉴스 검색
