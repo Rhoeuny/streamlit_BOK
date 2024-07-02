@@ -47,12 +47,15 @@ def judge_tone(sentence):
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
+    st.session_state.charts = []
         
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
+for chart in st.session_state.charts:
+    st.plotly_chart(chart)
 
 
 
@@ -84,3 +87,6 @@ def create_gauge_chart(value, title):
 import streamlit as st
 fig = create_gauge_chart(tone, "Sent_TONE")
 st.plotly_chart(fig)
+
+# Save the chart to the session state
+st.session_state.charts.append(fig)
