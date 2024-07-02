@@ -47,7 +47,8 @@ select_option = st.selectbox('값을 선택하세요:', n_options)
 neg_sent = neg_sent.drop('Unnamed: 0',axis=1)
 filtered_ndf = neg_sent[neg_sent['Dovish'] == select_option]
 st.dataframe(filtered_ndf)
-#----------------------------------------------------------------------------
+
+st.write("-------------------------------------------------------------------")
 
 pos_10 = pos_dic.sort_values('Up', ascending=False).head(10)
 pos_10['H_Key'] = pos_10['H_Key'].apply(lambda x: x.split('/')[0])

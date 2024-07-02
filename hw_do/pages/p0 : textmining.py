@@ -39,7 +39,10 @@ st.pyplot(test)
 # 데이터 프레임 출력(정렬 기능 제공)
 st.dataframe(date_df, use_container_width = True)
 
+st.write("-------------------------------------------------------------------")
 
+
+st.subheader('산점도 및 추세선')
 
 import seaborn as sns
 # seaborn 설치 필요!

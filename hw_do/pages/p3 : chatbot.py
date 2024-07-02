@@ -24,6 +24,9 @@ with st.sidebar:
     sentence = st.selectbox('문장을 선택하세요:', sent_options)
 
 
+st.subheader('의사록 문장 톤분석 챗봇')
+
+
 def judge_tone(sentence):
     
         rows = sent_dic[sent_dic['sentence'] == sentence].index
