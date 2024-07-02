@@ -3,7 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import numpy as np
-import os
 
 font_path = '/System/Library/Fonts/Supplemental/AppleGothic.ttf'
 # 폰트 프로퍼티를 가져옵니다.
