@@ -37,7 +37,7 @@ for n_bar in n_bars:
 st.header('🕊️DOVISH 사전')
 
 dic, n_bar = st.columns(2)
-dic.dataframe(neg_dic)
+dic.dataframe(neg_dic,height=250)
 n_bar.pyplot(n_fig)
 
 st.write("")
@@ -65,7 +65,7 @@ for h_bar in h_bars:
 st.header('🦅HAWKISH 사전')
 
 dic, h_bar = st.columns(2)
-dic.dataframe(pos_dic)
+dic.dataframe(pos_dic,height=250)
 h_bar.pyplot(h_fig)
 
 st.write("")
