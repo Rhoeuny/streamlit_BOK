@@ -47,16 +47,13 @@ def judge_tone(sentence):
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
-    st.session_state.charts = []
-        
-# Display chat messages from history on app rerun
+
+# Display chat messages and charts from history on app rerun
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
-
-for chart in st.session_state.charts:
-    st.plotly_chart(chart)
-
+        if message["role"] == "assistant" and "chart" in message:
+            st.plotly_chart(message["chart"])
 
 
 # 챗봇에 문장 입력
@@ -87,9 +84,7 @@ def create_gauge_chart(value, title):
 fig = create_gauge_chart(tone, "Sent_TONE")
 st.plotly_chart(fig)
 
-# Save the chart to the session state, but ensure only the latest chart is kept
-if len(st.session_state.charts) >= len(st.session_state.messages) // 2:
-    st.session_state.charts.pop(0)
-
+# Save the chart to the session state, ensuring it stays with the corresponding message
+st.session_state.messages[-1]["chart"] = fig
 # Save the chart to the session state
-st.session_state.charts.append(fig)
+# st.session_state.charts.append(fig)
