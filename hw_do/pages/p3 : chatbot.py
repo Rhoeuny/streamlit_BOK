@@ -84,9 +84,12 @@ def create_gauge_chart(value, title):
     return fig
 
 # Streamlit에서 표시
-import streamlit as st
 fig = create_gauge_chart(tone, "Sent_TONE")
 st.plotly_chart(fig)
+
+# Save the chart to the session state, but ensure only the latest chart is kept
+if len(st.session_state.charts) >= len(st.session_state.messages) // 2:
+    st.session_state.charts.pop(0)
 
 # Save the chart to the session state
 st.session_state.charts.append(fig)
